@@ -31,7 +31,7 @@ public class Argument {
     }
 
     public boolean appliesToCurrentEnvironment(CompatibilityRule.FeatureMatcher featureMatcher) {
-        if (this.compatibilityRules == null) {
+        if (this.compatibilityRules == null || compatibilityRules.size() == 0) {
             return true;
         }
         CompatibilityRule.Action lastAction = CompatibilityRule.Action.DISALLOW;
@@ -69,7 +69,13 @@ public class Argument {
                     for (JsonElement element : array) {
                         rules.add((CompatibilityRule)context.deserialize(element, (Type)((Object)CompatibilityRule.class)));
                     }
+                } else if (obj.has("compatibilityRules")) {
+                    JsonArray array = obj.getAsJsonArray("compatibilityRules");
+                    for (JsonElement element : array) {
+                        rules.add((CompatibilityRule)context.deserialize(element, (Type)((Object)CompatibilityRule.class)));
+                    }
                 }
+                if (rules.size() == 0) rules = null;
                 return new Argument(values, rules);
             }
             throw new JsonParseException("Invalid argument, must be object or string");

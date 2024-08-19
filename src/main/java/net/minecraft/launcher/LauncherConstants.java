@@ -19,7 +19,7 @@ public class LauncherConstants {
     public static final int PROFILES_FORMAT = 1;
     public static final URI URL_REGISTER = LauncherConstants.constantURI("https://account.mojang.com/register");
     public static final String URL_JAR_FALLBACK = "https://s3.amazonaws.com/Minecraft.Download/";
-    public static final String URL_RESOURCE_BASE = "http://resources.download.minecraft.net/";
+    public static final String URL_RESOURCE_BASE = "https://resources.download.minecraft.net/";
     public static final String URL_LIBRARY_BASE = "https://libraries.minecraft.net/";
     //public static final String URL_WEBSITE = "http://mcupdate.tumblr.com"; // The old legacy blog (no longer updated)
     public static final String URL_WEBSITE = "http://mclaunch.github.io/mcupdate";

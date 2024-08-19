@@ -46,6 +46,7 @@ extends HttpUserAuthentication {
     public YggdrasilUserAuthentication(YggdrasilAuthenticationService authenticationService, Agent agent) {
         super(authenticationService);
         this.agent = agent;
+        this.isOnline = true;
     }
 
     @Override
@@ -59,7 +60,7 @@ extends HttpUserAuthentication {
             throw new InvalidCredentialsException("Invalid username");
         }
         if (StringUtils.isNotBlank(this.getAuthenticatedToken())) {
-            this.logInWithToken();
+            return; // this.logInWithToken();
         } else if (StringUtils.isNotBlank(this.getPassword())) {
             this.logInWithPassword();
         } else {

@@ -1,13 +1,12 @@
 # mclaunch
-The old Minecraft Java launcher, updated.
+The old Minecraft Java launcher, updated, then updated again.
 
-## Well, where do I get it?
-You can download the latest version from the Github releases page: [Releases](https://github.com/mclaunch/mclaunch/releases)
+# Requirements
+Java 8. It doesn't work properly with newer Java versions.
 
 ## What does this launcher have?
-This launcher is made to bring back the old Java launcher fully working and updated. Here's a list of the things it has:
+This launcher is made to bring back the old Java launcher working and updated. Here's a list of the things it has:
 
  + The old Java launcher
- + Full support for all Minecraft versions (all the way back to the Alpha versions)
- + An updated blog (The old MCUpdate blog has been discontinued, so we made our own on the [MCUpdate repository](https://github.com/mclaunch/mcupdate))
+ + Full support for Minecraft versions up to 1.16.5 (all the way back to the Alpha versions)
  + A good look
