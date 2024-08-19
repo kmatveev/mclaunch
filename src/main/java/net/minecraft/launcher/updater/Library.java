@@ -143,7 +143,7 @@ public class Library {
         Object[] arrobject = new Object[3];
         arrobject[0] = parts[1];
         arrobject[1] = parts[2];
-        arrobject[2] = StringUtils.isEmpty(classifier) ? "" : "-" + classifier;
+        arrobject[2] = parts.length > 3 ? ("-" + parts[3]) : StringUtils.isEmpty(classifier) ? "" : ("-" + classifier);
         String result = String.format("%s-%s%s.jar", arrobject);
         return SUBSTITUTOR.replace(result);
     }
