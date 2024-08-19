@@ -120,7 +120,7 @@ public class Library {
         if (this.name == null) {
             throw new IllegalStateException("Cannot get artifact dir of empty/blank artifact");
         }
-        String[] parts = this.name.split(":", 3);
+        String[] parts = this.name.split(":", 0);
         return String.format("%s/%s/%s", parts[0].replaceAll("\\.", "/"), parts[1], parts[2]);
     }
 
@@ -139,7 +139,7 @@ public class Library {
         if (this.name == null) {
             throw new IllegalStateException("Cannot get artifact filename of empty/blank artifact");
         }
-        String[] parts = this.name.split(":", 3);
+        String[] parts = this.name.split(":", 0);
         Object[] arrobject = new Object[3];
         arrobject[0] = parts[1];
         arrobject[1] = parts[2];

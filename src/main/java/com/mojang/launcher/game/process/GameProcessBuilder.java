@@ -11,6 +11,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 
 public class GameProcessBuilder {
@@ -39,7 +40,11 @@ public class GameProcessBuilder {
     }
 
     public /* varargs */ GameProcessBuilder withArguments(String ... commands) {
-        this.arguments.addAll(Arrays.asList(commands));
+        List<String> commandsList = new ArrayList<>(Arrays.asList(commands));
+        for (Iterator<String> it = commandsList.iterator(); it.hasNext();) {
+            if (it.next().length() == 0) it.remove();
+        }
+        this.arguments.addAll(commandsList);
         return this;
     }
 
